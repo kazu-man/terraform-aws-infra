@@ -5,7 +5,7 @@ terraform {
       version = "~> 5.41.0"
     }
   }
-  cloud{
+  cloud {
     organization = "AWS-practice-kazu-man"
     workspaces {
       name = "aws-infra"
@@ -34,6 +34,7 @@ resource "aws_instance" "test_server" {
   subnet_id     = aws_subnet.test_subnet.id
 
   tags = {
-    Name = "TestInstance"
+    Name      = "TestInstance",
+    ManagedBy = "HCP Terraform"
   }
 }
